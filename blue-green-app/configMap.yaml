@@ -5,4 +5,4 @@ metadata:
   annotations:
     reloader.stakater.com/match: "true"
 data:
-  key: value
+  key: value1
