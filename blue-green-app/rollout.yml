@@ -3,6 +3,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: simple-rollout
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 2
   strategy:
@@ -35,3 +37,9 @@ spec:
         - name: http
           containerPort: 8080
           protocol: TCP
+        env:
+        - name: test_123
+          valueFrom:
+            configMapKeyRef:
+              name: test   # Reference the ConfigMap name
+              key: key     
