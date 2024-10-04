@@ -4,7 +4,7 @@ kind: Rollout
 metadata:
   name: simple-rollout
   annotations:
-    configmap.reloader.stakater.com/reload: "test"
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 2
   strategy:
