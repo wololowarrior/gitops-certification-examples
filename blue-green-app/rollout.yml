@@ -32,8 +32,8 @@ spec:
     spec:
       containers:
       - name: webserver-simple
-        image: reloader_dev:latest
-        imagePullPolicy: never
+        image: docker.io/kostiscodefresh/gitops-canary-app:v1.0
+        # imagePullPolicy: never
         ports:
         - name: http
           containerPort: 8080
