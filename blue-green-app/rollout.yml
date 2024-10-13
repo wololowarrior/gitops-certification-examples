@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: webserver-simple
-        image: reloader_dev:lastest
+        image: reloader_dev:latest
         ports:
         - name: http
           containerPort: 8080
