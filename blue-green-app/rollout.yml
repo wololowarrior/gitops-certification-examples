@@ -5,7 +5,7 @@ metadata:
   name: simple-rollout
   annotations:
     reloader.stakater.com/auto: "true"
-    reloader.stakater.com/triggerRollout: "true"
+    # reloader.stakater.com/triggerRollout: "true"
 spec:
   replicas: 2
   strategy:
