@@ -29,4 +29,5 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: simple-deployment
+    scaleDown: onsuccess
     
