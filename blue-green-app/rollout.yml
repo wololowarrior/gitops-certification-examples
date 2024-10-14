@@ -7,7 +7,6 @@ metadata:
     reloader.stakater.com/auto: "true"
     reloader.stakater.com/triggerRollout: "false"
 spec:
-  replicas: 2
   strategy:
     blueGreen: 
       # activeService specifies the service to update with the new template hash at time of promotion.
