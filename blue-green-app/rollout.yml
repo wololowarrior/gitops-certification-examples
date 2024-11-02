@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: simple-rollout
+  name: trivial-go-web-app
   annotations:
     reloader.stakater.com/auto: "true"
     reloader.stakater.com/triggerRollout: "true"
