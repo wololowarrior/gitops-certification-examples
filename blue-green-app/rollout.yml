@@ -8,7 +8,7 @@ metadata:
   labels:
     app: trivial-go-web-app
 spec:
-  replicas: 2
+  replicas: 0
   strategy:
     blueGreen: 
       # activeService specifies the service to update with the new template hash at time of promotion.
