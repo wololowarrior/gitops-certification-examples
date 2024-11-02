@@ -47,9 +47,9 @@ spec:
     #         configMapKeyRef:
     #           name: test   # Reference the ConfigMap name
     #           key: key     
-    workloadRef:
-      apiVersion: apps/v1
-      kind: Deployment
-      name: trivial-go-web-app
-      scaleDown: onsuccess
+  workloadRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: trivial-go-web-app
+    scaleDown: onsuccess
     
