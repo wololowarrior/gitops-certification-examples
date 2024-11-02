@@ -5,7 +5,6 @@ metadata:
   name: trivial-go-web-app
   annotations:
     reloader.stakater.com/auto: "true"
-    reloader.stakater.com/triggerRollout: "true"
   labels:
     app: trivial-go-web-app
 spec:
