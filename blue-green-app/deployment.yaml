@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-deployment
+  name: trivial-go-web-app
   labels:
     app: trivial-go-web-app
 spec:
