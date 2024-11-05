@@ -24,6 +24,6 @@ spec:
         env:
         - name: test_123
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: test   # Reference to the ConfigMap for environment variables
               key: key
