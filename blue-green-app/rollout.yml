@@ -61,4 +61,4 @@ spec:
     kind:       Rollout
     name:       trivial-go-web-app
   updatePolicy:
-    updateMode: "Off"
+    updateMode: "auto"
