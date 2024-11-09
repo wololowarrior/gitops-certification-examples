@@ -2,9 +2,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: simple-rollout
+  name: trivial-go-web-app
   annotations:
     reloader.stakater.com/auto: "true"
+  labels:
+    app: trivial-go-web-app
 spec:
   replicas: 2
   strategy:
@@ -25,21 +27,38 @@ spec:
   selector:
     matchLabels:
       app: trivial-go-web-app
-  template:
-    metadata:
-      labels:
-        app: trivial-go-web-app
-    spec:
-      containers:
-      - name: webserver-simple
-        image: docker.io/kostiscodefresh/gitops-canary-app:v1.0
-        ports:
-        - name: http
-          containerPort: 8080
-          protocol: TCP
-        env:
-        - name: test_123
-          valueFrom:
-            configMapKeyRef:
-              name: test   # Reference the ConfigMap name
-              key: key     
+  # template:
+  #   metadata:
+  #     labels:
+  #       app: trivial-go-web-app
+  #   spec:
+  #     containers:
+  #     - name: webserver-simple
+  #       image: docker.io/kostiscodefresh/gitops-canary-app:v1.0
+  #       # imagePullPolicy: never
+  #       ports:
+  #       - name: http
+  #         containerPort: 8080
+  #         protocol: TCP
+  #       env:
+  #       - name: test_123
+  #         valueFrom:
+  #           configMapKeyRef:
+  #             name: test   # Reference the ConfigMap name
+  #             key: key     
+  workloadRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: trivial-go-web-app
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: my-app-vpa
+spec:
+  targetRef:
+    apiVersion: "argoproj.io/v1alpha1"
+    kind:       Rollout
+    name:       trivial-go-web-app
+  updatePolicy:
+    updateMode: "Auto"
