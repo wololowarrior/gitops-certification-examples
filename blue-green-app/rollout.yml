@@ -7,6 +7,7 @@ metadata:
     reloader.stakater.com/auto: "true"
   labels:
     app: trivial-go-web-app
+    auto-vpa/create: "true"
 spec:
   replicas: 2
   strategy:
